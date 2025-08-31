@@ -3,6 +3,11 @@
 A modern web application to search and discover movies using [The Movie Database (TMDb)](https://themoviedb.org) API.
 
 Built with React + TailwindCSS.
+![ксе](https://github.com/user-attachments/assets/3c32664f-8aaa-4edc-9b74-3d4575ae8aa7)
+
+## Responsive Interface
+![Untitledфффы-1](https://github.com/user-attachments/assets/03b700fd-4063-46a1-bea1-9fdd9acad1fb)
+
 
 ## ⚙️ Tech Stack
 
