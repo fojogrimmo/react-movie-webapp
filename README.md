@@ -1,6 +1,6 @@
 # 🎬 Movie Explorer
 
-A modern web application to search and discover movies using [The Movie Database (TMDb)](themoviedb.org) API.
+A modern web application to search and discover movies using [The Movie Database (TMDb)](https://themoviedb.org) API.
 
 Built with React + TailwindCSS.
 
