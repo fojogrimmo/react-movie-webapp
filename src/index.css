@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #030303;
+
+  --color-light-100: #e5e5e5;
+  --color-light-200: #d1d5db;
+
+  --color-gray-100: #d1d5db;
+
+  --color-dark-100: #1f2937;
+
+  --color-accent-green: #66cc66;
+  --color-accent-orange: #ffa500;
+
+  --font-dm-sans: "DM Sans", sans-serif;
+
+  --breakpoint-xs: 480px;
+
+  --background-image-pattern: url(bg.jpg);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-dm-sans);
+    font-optical-sizing: auto;
+    background: var(--color-primary);
+    color: var(--color-light-100);
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl font-bold text-light-100 tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold text-light-100;
+  }
+
+  main {
+    @apply min-h-screen bg-primary;
+  }
+
+  header {
+    @apply mt-6 mb-4;
+  }
+
+  header img {
+    @apply mx-auto max-w-[160px];
+  }
+}
+
+@layer components {
+  .pattern {
+    @apply w-full h-screen bg-center bg-cover absolute z-0;
+    background-image: var(--background-image-pattern);
+  }
+
+  .wrapper {
+    @apply mt-10 px-5 py-10 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+  }
+
+  .intro {
+    @apply flex-1 text-center md:text-left;
+  }
+
+  .intro-poster {
+    @apply flex flex-col md:flex-row items-center justify-between gap-10;
+  }
+
+  .intro-text {
+    @apply uppercase;
+  }
+
+  .poster {
+    @apply flex-1 flex justify-center;
+  }
+
+  .poster img {
+    @apply w-full max-w-md md:max-w-lg object-contain;
+  }
+
+  .btn {
+    @apply mt-6 inline-flex items-center justify-center gap-2 
+           border-2 hover:scale-105 transition cursor-pointer font-medium rounded-lg 
+           text-lg px-5 py-2.5 me-2 mb-2;
+  }
+
+  .btn__icon {
+    @apply flex items-center justify-center;
+  }
+
+  .trending {
+    @apply mt-10;
+
+    & ul {
+      @apply flex flex-row overflow-y-auto gap-4 w-full hide-scrollbar;
+    }
+
+    & ul li {
+      @apply min-w-[180px] flex flex-col items-start;
+    }
+
+    & ul li img {
+      @apply w-[100px] h-[150px] rounded-md object-cover;
+    }
+
+    & ul li p {
+      @apply text-sm text-light-200 mt-1;
+    }
+  }
+
+  .search {
+    @apply w-sm border-white border-2 px-4 py-2 rounded-md max-w-3xl mx-auto mt-6;
+
+    & div {
+      @apply relative flex items-center;
+    }
+
+    & img {
+      @apply absolute left-2 h-5 w-5;
+    }
+
+    & input {
+      @apply w-full bg-transparent py-2 px-8 text-light-100 placeholder-light-200 outline-none;
+    }
+  }
+
+  .all-movies {
+    @apply space-y-8;
+
+    & ul {
+      @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+    }
+  }
+
+  .movie-card {
+    @apply bg-gray-950 cursor-pointer p-2 rounded-lg shadow-md transition-transform duration-200 hover:scale-[1.02];
+
+    & img {
+      @apply rounded-md h-auto w-full object-cover;
+    }
+
+    & h3 {
+      @apply text-light-100 text-base font-semibold mt-2;
+    }
+
+    & .rating {
+      @apply flex flex-row items-center gap-1;
+    }
+
+    & .rating img {
+      @apply size-4 object-contain;
+    }
+
+    & .rating p {
+      @apply font-bold text-base text-white;
+    }
+
+    & .content {
+      @apply pt-4 mt-1 flex flex-row items-center flex-wrap gap-1;
+    }
+
+    & .content .lang {
+      @apply capitalize text-gray-100 font-medium text-base;
+    }
+
+    & .content span,
+    & .content .lang,
+    & .content .year {
+      @apply text-gray-100 text-sm;
+    }
+  }
+}
+
+.scroll-holder {
+  width: 90%;
+  max-width: 1590px;
+  margin-inline: auto;
+  position: relative;
+  margin-top: 2rem;
+  height: 250px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(to right, #2203ff 0%, #c40d60 100%);
+  @apply bg-clip-text text-transparent;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-accent-green {
+  color: var(--color-accent-green);
+}
+
+@utility text-accent-orange {
+  color: var(--color-accent-orange);
+}
